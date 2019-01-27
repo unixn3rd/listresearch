@@ -1,0 +1,7 @@
+#!/bin/bash
+#listresearch takes a string of commands with as many command variables as needed
+#the last statement must be a list
+
+while read line; do
+   "${@:1:$(($#-1))}" $line
+done < "${@: -1}"
